@@ -1,0 +1,4 @@
+buildroot
+output
+*.tar.gz
+*.img.gz
