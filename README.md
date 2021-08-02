@@ -8,16 +8,23 @@ Just using the default setup from buildroot, will add custom kernel and software
 
 * `configs/`
 
-|          | amd64 (x86_64)                  | arm64 (aarch64)             |
-| -------- | ------------------------------- | --------------------------- |
-| QEMU     | qemu/x86_64                     | qemu/aarch64-virt           |
-|          | qemu_x86_64_defconfig           | qemu_aarch64_virt_defconfig |
-| UEFI     | pc                              | aarch64-efi                 |
-|          | pc_x86_64_efi_defconfig         | aarch64_efi_defconfig       |
-| Kernel   | x86_64_defconfig                | arm64_defconfig             |
-|          | linux/arch/x86/configs/         | linux/arch/arm64/defconfig  |
+|          | amd64 (x86_64)                    | arm64 (aarch64)               |
+| -------- | --------------------------------- | ----------------------------- |
+| QEMU     | qemu/x86_64                       | qemu/aarch64-virt             |
+|          | qemu_x86_64_defconfig             | qemu_aarch64_virt_defconfig   |
+| UEFI     | pc                                | aarch64-efi                   |
+|          | pc_x86_64_efi_defconfig           | aarch64_efi_defconfig         |
+| Kernel   | x86_64_defconfig                  | arm64_defconfig               |
+|          | linux/arch/x86/configs/           | linux/arch/arm64/defconfig    |
 
 Just copied these files from buildroot, since it was hard to see the forest for the trees.
+
+New targets (based on UEFI above), making an `.iso` (ISO-9660) output instead of an `.img`.
+
+|          | amd64 (x86_64)                    | arm64 (aarch64)               |
+| -------- | --------------------------------- | ----------------------------- |
+| ISO      | iso/x86_64                        | iso/aarch64                   |
+|          | iso_x86_64_defconfig              | configs/iso_aarch64_defconfig |
 
 ----
 
