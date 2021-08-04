@@ -24,7 +24,7 @@ New targets (based on UEFI above), making an `.iso` (ISO-9660) output instead of
 |          | amd64 (x86_64)                    | arm64 (aarch64)               |
 | -------- | --------------------------------- | ----------------------------- |
 | ISO      | iso/x86_64                        | iso/aarch64                   |
-|          | iso_x86_64_defconfig              | configs/iso_aarch64_defconfig |
+|          | iso_x86_64_defconfig              | iso_aarch64_defconfig         |
 
 ----
 
@@ -56,3 +56,8 @@ Start the emulator directly with the kernel and the rootfs in the same terminal 
 * [run-arm64.sh](run-arm64.sh)
 
 Start the emulator with the complete system image with grub in a new graphical window.
+
+* [iso-amd64.sh](iso-amd64.sh)
+* [iso-arm64.sh](iso-arm64.sh)
+
+Start the emulator from the UEFI CD boot image instead of disk, otherwise same as above.
