@@ -8,16 +8,53 @@ Just using the default setup from buildroot, will add custom kernel and software
 
 * `configs/`
 
-|          | amd64 (x86_64)                    | arm64 (aarch64)               |
+| Target   | amd64 (x86_64)                    | arm64 (aarch64)               |
 | -------- | --------------------------------- | ----------------------------- |
 | QEMU     | qemu/x86_64                       | qemu/aarch64-virt             |
 |          | qemu_x86_64_defconfig             | qemu_aarch64_virt_defconfig   |
 | UEFI     | pc                                | aarch64-efi                   |
 |          | pc_x86_64_efi_defconfig           | aarch64_efi_defconfig         |
+
+Just copied these files from buildroot, since it was hard to see the forest for the trees.
+
+Some quirks: the x86_64 targets builds ext2 (not ext4), and without support for "virtio".
+
+The name of the kernel and format of the initrd might also vary a bit, between the arch.
+
+| Linux    | amd64 (x86_64)                    | arm64 (aarch64)               |
+| -------- | --------------------------------- | ----------------------------- |
 | Kernel   | x86_64_defconfig                  | arm64_defconfig               |
 |          | linux/arch/x86/configs/           | linux/arch/arm64/defconfig    |
 
-Just copied these files from buildroot, since it was hard to see the forest for the trees.
+These default configs were copied from the Linux kernel, and seen with "make defconfig".
+
+----
+
+New targets (based on UEFI above), making an `.img` disk with boot/root ext4 partitions.
+
+|          | amd64 (x86_64)                    | arm64 (aarch64)               |
+| -------- | --------------------------------- | ----------------------------- |
+| Image    | img/x86_64                        | img/aarch64                   |
+|          | img_x86_64_defconfig              | img_aarch64_defconfig         |
+|          | img/x86_64/linux.config           | img/aarch64/linux.config      |
+
+amd64
+```
+Disk disk-amd64.img: 136,5 MiB, 142656000 bytes, 278625 sectors
+
+Device          Start    End Sectors  Size Type
+disk-amd64.img1    64  32831   32768   16M EFI System
+disk-amd64.img2 32832 278591  245760  120M Linux root (x86)
+```
+
+arm64
+```
+Disk disk-arm64.img: 232 MiB, 243270144 bytes, 475137 sectors
+
+Device          Boot Start    End Sectors  Size Id Type
+disk-arm64.img1          1  65536   65536   32M ef EFI (FAT-12/16/32)
+disk-arm64.img2      65537 475136  409600  200M 83 Linux
+```
 
 New targets (based on UEFI above), making an `.iso` (ISO-9660) output instead of an `.img`.
 
@@ -25,6 +62,34 @@ New targets (based on UEFI above), making an `.iso` (ISO-9660) output instead of
 | -------- | --------------------------------- | ----------------------------- |
 | ISO      | iso/x86_64                        | iso/aarch64                   |
 |          | iso_x86_64_defconfig              | iso_aarch64_defconfig         |
+
+amd64
+```
+boot-amd64.iso
+├── boot
+│   ├── initrd.img
+│   └── vmlinuz
+├── boot.catalog
+└── EFI
+    └── BOOT
+        ├── bootx64.efi
+        ├── efiboot.img
+        └── grub.cfg
+```
+
+arm64
+```
+boot-arm64.iso
+├── boot
+│   ├── initrd.img
+│   └── vmlinuz
+├── boot.catalog
+└── EFI
+    └── BOOT
+        ├── bootaa64.efi
+        ├── efiboot.img
+        └── grub.cfg
+```
 
 ----
 
