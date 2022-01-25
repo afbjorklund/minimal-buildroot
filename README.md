@@ -41,23 +41,34 @@ make BR2_EXTERNAL=.. <*_defconfig>
 make
 ```
 
+----
+
 ```text
 93M  output/images/disk-amd64.img
 63M  output/images/disk-arm64.img
 ```
-----
 
-* [qemu-amd64.sh](qemu-amd64.sh)
-* [qemu-arm64.sh](qemu-arm64.sh)
+* [qemu-img-amd64.sh](qemu-img-amd64.sh)
+* [qemu-img-arm64.sh](qemu-img-arm64.sh)
 
 Start the emulator directly with the kernel and the rootfs in the same terminal window.
 
-* [run-amd64.sh](run-amd64.sh)
-* [run-arm64.sh](run-arm64.sh)
+* [run-img-amd64.sh](run-img-amd64.sh)
+* [run-img-arm64.sh](run-img-arm64.sh)
 
 Start the emulator with the complete system image with grub in a new graphical window.
 
-* [iso-amd64.sh](iso-amd64.sh)
-* [iso-arm64.sh](iso-arm64.sh)
+```text
+12M  output/images/boot-amd64.iso
+29M  output/images/boot-arm64.iso
+```
+
+* [qemu-iso-amd64.sh](qemu-iso-amd64.sh)
+* [qemu-iso-arm64.sh](qemu-iso-arm64.sh)
+
+Start the emulator directly with the kernel and the initrd in the same terminal window.
+
+* [run-iso-amd64.sh](run-iso-amd64.sh)
+* [run-iso-arm64.sh](run-iso-arm64.sh)
 
 Start the emulator from the UEFI CD boot image instead of disk, otherwise same as above.
