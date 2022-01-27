@@ -106,6 +106,14 @@ make BR2_EXTERNAL=.. <*_defconfig>
 make
 ```
 
+* `support/`
+
+Support files for building, such as a container image with all required build tools.
+
+* `container/`
+
+Contains helper files for constructing the container image from the rootfs archive.
+
 ----
 
 ```text
