@@ -26,7 +26,7 @@ The name of the kernel and format of the initrd might also vary a bit, between t
 | Linux    | amd64 (x86_64)                    | arm64 (aarch64)               |
 | -------- | --------------------------------- | ----------------------------- |
 | Kernel   | kernel/x86_64_defconfig           | kernel/aarch64_defconfig      |
-|          | linux/arch/x86/configs/           | linux/arch/arm64/defconfig    |
+|          | linux/arch/x86/configs/           | linux/arch/arm64/configs/     |
 
 These default configs were copied from the Linux kernel, and seen with "make defconfig".
 
