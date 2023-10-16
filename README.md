@@ -21,6 +21,8 @@ Some quirks: the x86_64 targets builds ext2 (not ext4), and without support for 
 
 The name of the kernel and format of the initrd might also vary a bit, between the arch.
 
+* `kernel/`
+
 | Linux    | amd64 (x86_64)                    | arm64 (aarch64)               |
 | -------- | --------------------------------- | ----------------------------- |
 | Kernel   | kernel/x86_64_defconfig           | kernel/aarch64_defconfig      |
@@ -94,6 +96,8 @@ boot-arm64.iso
 ----
 
 * `buildroot/`
+
+This is the buildroot upstream, it is not modified except for the "output" directory.
 
 * `output/`
 
