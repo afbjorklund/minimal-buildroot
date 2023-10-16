@@ -1,6 +1,6 @@
 
 The aarch64_efi_defconfig allows to build a minimal Linux system that
-can boot on all AArch64 servers providing an EFI firmware and ACPI.
+can boot on all AArch64 servers providing an EFI firmware.
 
 Building and booting
 ====================

@@ -104,7 +104,7 @@ This is the buildroot upstream, it is not modified except for the "output" direc
 This is where the sources and build happens, and where the output ends up afterwards.
 
 ```bash
-git clone --branch=2021.02.x https://github.com/buildroot/buildroot
+git clone --branch=2023.02.x https://github.com/buildroot/buildroot
 cd buildroot
 make BR2_EXTERNAL=.. <*_defconfig>
 make
