@@ -1,6 +1,6 @@
 DOCKER = docker
 
-IMAGE = root
+IMAGE = buildroot/root
 
 # docker import rootfs.tar rootfs
 # docker run -it rootfs /bin/sh
@@ -9,6 +9,7 @@ IMAGE = root
 image: Dockerfile rootfs.tar
 	$(DOCKER) build -t $(IMAGE) .
 
+.PHONY: run
 run:
 	$(DOCKER) run -it $(IMAGE)
 
