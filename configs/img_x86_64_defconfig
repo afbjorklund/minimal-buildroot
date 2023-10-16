@@ -25,6 +25,7 @@ BR2_TARGET_ROOTFS_EXT2_SIZE="120M"
 # BR2_TARGET_ROOTFS_TAR is not set
 BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_minimal_PATH)/board/img/x86_64/post-build.sh"
 BR2_ROOTFS_POST_IMAGE_SCRIPT="$(BR2_EXTERNAL_minimal_PATH)/board/img/x86_64/post-image.sh"
+BR2_ROOTFS_POST_SCRIPT_ARGS="$(BR2_EXTERNAL_minimal_PATH)/board/img/x86_64/genimage.cfg"
 
 # Linux headers same as kernel, a 5.10 series
 BR2_PACKAGE_HOST_LINUX_HEADERS_CUSTOM_5_10=y
