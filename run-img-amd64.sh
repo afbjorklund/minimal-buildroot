@@ -4,6 +4,6 @@ qemu-system-x86_64 \
 	-bios /usr/share/OVMF/OVMF_CODE.fd \
 	-smp 1 \
 	-m 512 \
-	-drive file=output/images/disk-amd64.img,media=disk,format=raw \
+	-drive file=output/images/disk-amd64.img,if=virtio,media=disk,format=raw,id=hd0 \
 	-net nic,model=virtio \
 	-net user
