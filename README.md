@@ -34,11 +34,11 @@ These default configs were copied from the Linux kernel, and seen with "make def
 
 New targets (based on UEFI above), making an `.img` disk with boot/root ext4 partitions.
 
-|          | amd64 (x86_64)                    | arm64 (aarch64)               |
-| -------- | --------------------------------- | ----------------------------- |
-| Image    | img/x86_64                        | img/aarch64                   |
-|          | img_x86_64_defconfig              | img_aarch64_defconfig         |
-|          | img/x86_64/linux.config           | img/aarch64/linux.config      |
+|          | amd64 (x86_64)                    | arm64 (aarch64)                   |
+| -------- | --------------------------------- | --------------------------------- |
+| Image    | img/x86_64                        | img/aarch64                       |
+|          | img_x86_64_defconfig              | img_aarch64_defconfig             |
+|          | img/x86_64/linux.config           | img/aarch64/linux.config          |
 
 amd64
 ```
@@ -60,10 +60,11 @@ disk-arm64.img2      65537 475136  409600  200M 83 Linux
 
 New targets (based on UEFI above), making an `.iso` (ISO-9660) output instead of an `.img`.
 
-|          | amd64 (x86_64)                    | arm64 (aarch64)               |
-| -------- | --------------------------------- | ----------------------------- |
-| ISO      | iso/x86_64                        | iso/aarch64                   |
-|          | iso_x86_64_defconfig              | iso_aarch64_defconfig         |
+|          | amd64 (x86_64)                    | arm64 (aarch64)                   |
+| -------- | --------------------------------- | --------------------------------- |
+| ISO      | iso/x86_64                        | iso/aarch64                       |
+|          | iso_x86_64_defconfig              | iso_aarch64_defconfig             |
+|          | iso/x86_64/linux-extras.config    | iso/aarch64/linux-extras.config   |
 
 amd64
 ```
